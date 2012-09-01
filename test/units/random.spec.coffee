@@ -171,3 +171,17 @@ describe 'with a Random instance', ->
       it 'should return a 0 or a 1 with a default rate of 0.5', ->
         @callMethod 'bit', -1, (n) -> if (n%11) / 10 < 0.5 then 1 else 0
         @callMethod 'bit', 2, (n) -> if (n%11) / 10 < 0.5 then 1 else 0
+
+  describe 'calling Random#sign', ->
+    describe 'with a float between 0 or 1', ->
+      it 'should return -1 or 1 value according to the rate', ->
+        @callMethod 'sign', 0.2, (n) -> if (n%11) / 10 < 0.2 then 1 else -1
+
+    describe 'with no arguments', ->
+      it 'should return -1 or 1 with a default rate of 0.5', ->
+        @callMethod 'sign', (n) -> if (n%11) / 10 < 0.5 then 1 else -1
+
+    describe 'with values outside of the 0-1 range', ->
+      it 'should return -1 or 1 with a default rate of 0.5', ->
+        @callMethod 'sign', -1, (n) -> if (n%11) / 10 < 0.5 then 1 else -1
+        @callMethod 'sign', 2, (n) -> if (n%11) / 10 < 0.5 then 1 else -1
