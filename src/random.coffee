@@ -7,6 +7,10 @@ class Random
   get: -> @generator.get()
 
   boolean: (rate=0.5) -> rate = 0.5 unless 0 <= rate <= 1; @get() < rate
+  bit: (rate=0.5) ->
+    rate = 0.5 unless 0 <= rate <= 1
+    if @get() < rate then 1 else 0
+
   char: (arg, rangeEnd) ->
     [arg, rangeEnd] = ['abcdefghijklmnopqrstuvwxyz', null] unless arg?
     switch typeof arg

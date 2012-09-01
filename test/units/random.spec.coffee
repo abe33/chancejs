@@ -157,3 +157,17 @@ describe 'with a Random instance', ->
         @callMethod 'in', min: 1, max: 2, step: 0.2, (n) ->
           a = [1, 1, 1.2, 1.2, 1.4, 1.4, 1.6, 1.6, 1.8, 1.8, 2]
           a[n%11]
+
+  describe 'calling Random#bit', ->
+    describe 'with a float between 0 or 1', ->
+      it 'should return a 0 or a 1 value according to the rate', ->
+        @callMethod 'bit', 0.2, (n) -> if (n%11) / 10 < 0.2 then 1 else 0
+
+    describe 'with no arguments', ->
+      it 'should return a 0 or a 1 with a default rate of 0.5', ->
+        @callMethod 'bit', (n) -> if (n%11) / 10 < 0.5 then 1 else 0
+
+    describe 'with values outside of the 0-1 range', ->
+      it 'should return a 0 or a 1 with a default rate of 0.5', ->
+        @callMethod 'bit', -1, (n) -> if (n%11) / 10 < 0.5 then 1 else 0
+        @callMethod 'bit', 2, (n) -> if (n%11) / 10 < 0.5 then 1 else 0
