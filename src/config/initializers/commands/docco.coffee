@@ -3,9 +3,9 @@ Neat = require 'neat'
 
 module.exports = (config) ->
 
-  dirs = ['src']
+  dirs = ['src/seeds']
 
-  sources = []
+  sources = ['src/random.coffee']
   sources = sources.concat findSync('coffee', d)?.sort() for d in dirs
 
   config.docco.paths.sources = sources.compact()
