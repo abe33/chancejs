@@ -1,0 +1,17 @@
+{
+  "name": "chancejs",
+  "version": "0.0.1",
+  "author": "Cédric Néhémie <cedric.nehemie@gmail.com>",
+  "description": "Various pseudo-random implementations packaged with helpful random utilities",
+  "keywords": [
+    "random",
+    "neat",
+    "pseudo-random",
+    "mersenne-twister"
+  ],
+  "dependencies": {
+    "neat": "0.0.61"
+  },
+  "devDependencies": {},
+  "main": "./lib/index"
+}
