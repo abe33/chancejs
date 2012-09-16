@@ -28,14 +28,11 @@ class LaggedFibonnacci
     l = kl % 169
 
     for ii in [0..96]
-      s = 0.0
-      t = 0.5
+      [s,t] = [0.0, 0.5]
 
       for jj in [0..23]
         m = (((i * j) % 179) * k) % 179
-        i = j
-        j = k
-        k = m
+        [i,j,k] = [j,k,m]
         l = (53 * l + 1) % 169
         s += t if (l * m) % 64 >= 32
         t *= 0.5
