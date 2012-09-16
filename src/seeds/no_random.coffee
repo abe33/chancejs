@@ -1,5 +1,5 @@
 class NoRandom
-  constructor: (@n) ->
-  get: -> @n
+  constructor: (@seed=0) ->
+  get: -> @seed
 
 module.exports = NoRandom
