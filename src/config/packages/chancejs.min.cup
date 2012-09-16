@@ -1,4 +1,4 @@
-name: "chancejs"
+name: "chancejs_min"
 package: "chancejs"
 includes: [
   'src/seeds/no_random'
@@ -16,5 +16,6 @@ operators: [
   'join'
   'exports:package'
   'compile'
+  'uglify'
   'saveToFile'
 ]
