@@ -1,9 +1,12 @@
 name: "chancejs"
 package: "chancejs"
 includes: [
+  'src/seeds/no_random'
+  'src/seeds/math_random'
   'src/seeds/linear'
   'src/seeds/linear_congruential'
   'src/seeds/lagged_fibonnacci'
+  'src/seeds/mersenne_twister'
   'src/random'
 ]
 operators: [
