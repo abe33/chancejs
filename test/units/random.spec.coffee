@@ -5,7 +5,7 @@ Linear = require '../../lib/seeds/linear'
 Random = require '../../lib/random'
 {print} = Neat.require 'utils/logs'
 
-floor = Math.floor
+{round, floor} = Math
 
 describe 'with a Random instance', ->
   beforeEach ->
@@ -30,10 +30,10 @@ describe 'with a Random instance', ->
 
   describe 'calling Random#intRandom', ->
     it 'should return an int from 0 to the passed-in value', ->
-      @callMethod 'intRandom', 5, (n) -> floor (n % 11) / 2
+      @callMethod 'intRandom', 5, (n) -> round (n % 11) / 2
 
     it 'should return the floored generator value when called without arg', ->
-      @callMethod 'intRandom', (n) -> floor (n % 11) / 10
+      @callMethod 'intRandom', (n) -> round (n % 11) / 10
 
   describe 'calling Random#pad', ->
     it 'should return a value around 0', ->
@@ -41,7 +41,7 @@ describe 'with a Random instance', ->
 
   describe 'calling Random#intPad', ->
     it 'should return a value around 0', ->
-      @callMethod 'intPad', 5, (n) -> floor 2.5 - (n % 11) / 2
+      @callMethod 'intPad', 5, (n) -> round 2.5 - (n % 11) / 2
 
   describe 'calling Random#boolean', ->
     describe 'with a float between 0 or 1', ->
@@ -71,20 +71,20 @@ describe 'with a Random instance', ->
 
     describe 'with a number as argument', ->
       it 'should return a char in the unicode range from 0 to the argument', ->
-        @callMethod 'char', 10, (n) -> String.fromCharCode floor (n%11)
+        @callMethod 'char', 10, (n) -> String.fromCharCode round (n%11)
 
     describe 'with two numbers as arguments', ->
       it 'should return a char in the unicode range from start to the end', ->
-        @callMethod 'char', 10, 20, (n) -> String.fromCharCode floor 10 +(n%11)
+        @callMethod 'char', 10, 20, (n) -> String.fromCharCode round 10 +(n%11)
 
     describe 'with no arguments', ->
       it 'should return a char from the latin alphabet', ->
         @callMethod 'char', (n) ->
-          'abcdefghijklmnopqrstuvwxyz'.substr floor((n%11) / 10 * 25), 1
+          'abcdefghijklmnopqrstuvwxyz'.substr round((n%11) / 10 * 25), 1
 
    describe 'calling Random#inArray', ->
     it 'should return of the value within the passed-in array', ->
-      @callMethod 'inArray', [0,1,2,3,4,5], (n) -> floor (n%11) / 2
+      @callMethod 'inArray', [0,1,2,3,4,5], (n) -> round (n%11) / 2
 
     it 'should return null whe no argument is passed', ->
       @callMethod 'inArray', (n) -> null
@@ -111,7 +111,7 @@ describe 'with a Random instance', ->
   describe 'calling Random#in', ->
     describe 'with an array as first argument', ->
       it 'should return of the value within the passed-in array', ->
-        @callMethod 'in', [0,1,2,3,4,5], (n) -> floor (n%11) / 2
+        @callMethod 'in', [0,1,2,3,4,5], (n) -> round (n%11) / 2
 
       it 'should return null whe no argument is passed', ->
         @callMethod 'in', (n) -> null
@@ -146,7 +146,7 @@ describe 'with a Random instance', ->
 
     describe 'with a list of arguments', ->
       it 'should return one of the arguments', ->
-        @callMethod 'in', 0, 1, 2, 3, 4, 5, (n) -> floor (n%11) / 2
+        @callMethod 'in', 0, 1, 2, 3, 4, 5, (n) -> round (n%11) / 2
 
     describe 'with a range object', ->
       it 'should return a number within the range', ->
@@ -185,3 +185,10 @@ describe 'with a Random instance', ->
       it 'should return -1 or 1 with a default rate of 0.5', ->
         @callMethod 'sign', -1, (n) -> if (n%11) / 10 < 0.5 then 1 else -1
         @callMethod 'sign', 2, (n) -> if (n%11) / 10 < 0.5 then 1 else -1
+
+  describe 'calling Random::sort', ->
+    it 'should return a function that return either -1, 0 or 1', ->
+      f = @random.sort()
+      a = [ 1, 1, 1, 0, 0, 0, 0, 0, -1, -1, -1 ]
+      for n in [0..20]
+        expect(f n).toBe(a[n%11])

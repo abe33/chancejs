@@ -1,5 +1,5 @@
 
-floor = Math.floor
+{floor, round} = Math
 
 class Random
   constructor: (@generator) ->
@@ -75,10 +75,12 @@ class Random
             if a.min? and a.max? then @inRange a.min, a.max, a.step
         else null
 
+  sort: -> => @intPad 2
+
   random: (amount) -> @get() * (amount or 1)
-  intRandom: (amount) -> floor @random amount
+  intRandom: (amount) -> round @random amount
 
   pad: (amount) -> amount / 2 - @random amount
-  intPad: (amount) -> floor @pad amount
+  intPad: (amount) -> round @pad amount
 
 module.exports = Random
