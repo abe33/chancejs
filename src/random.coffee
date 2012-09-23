@@ -70,7 +70,7 @@ class Random
         when 'string' then @inArray a, b, c
         when 'object'
           if Object::toString.call(a) == '[object Array]'
-             @inArray a, b, c
+            @inArray a, b, c
           else
             if a.min? and a.max? then @inRange a.min, a.max, a.step
         else null
