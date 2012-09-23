@@ -9,8 +9,11 @@
     "pseudo-random",
     "mersenne-twister"
   ],
+  "engine": {
+    "node": ">=0.6"
+  },
   "dependencies": {
-    "neat": "0.0.61"
+    "neat": "0.0.64"
   },
   "devDependencies": {},
   "main": "./lib/index"
