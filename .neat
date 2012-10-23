@@ -1,5 +1,5 @@
 name: "chancejs"
-version: "0.0.1"
+version: "0.0.2"
 author: "Cédric Néhémie <cedric.nehemie@gmail.com>"
 description: "Various pseudo-random implementations packaged with helpful random utilities"
 keywords: ["random", "neat", "pseudo-random", "mersenne-twister"]
