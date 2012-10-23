@@ -17,5 +17,5 @@ operators: [
   'exports:package'
   'compile'
   'uglify'
-  'saveToFile'
+  'create:file'
 ]

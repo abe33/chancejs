@@ -16,5 +16,5 @@ operators: [
   'join'
   'exports:package'
   'compile'
-  'saveToFile'
+  'create:file'
 ]
