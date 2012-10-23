@@ -10,10 +10,10 @@
     "mersenne-twister"
   ],
   "engine": {
-    "node": ">=0.6"
+    "node": "~0.8.0"
   },
   "dependencies": {
-    "neat": "0.0.64"
+    "neat": "0.0.69"
   },
   "devDependencies": {},
   "main": "./lib/index"
