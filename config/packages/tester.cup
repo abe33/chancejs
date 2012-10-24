@@ -1,0 +1,15 @@
+name: 'tester'
+package: 'chancejs.tester'
+includes: [
+  'src/tester/tester'
+  'src/tester/boot'
+]
+operators: [
+  'strip:requires'
+  'annotate:class'
+  'annotate:file'
+  'join'
+  'exports:package'
+  'compile'
+  'create:file'
+]
