@@ -1,5 +1,5 @@
 (function() {
-  var LaggedFibonnacci, Linear, LinearCongruential, MathRandom, MersenneTwister, NoRandom, Random, floor, round;
+  var LaggedFibonnacci, Linear, LinearCongruential, MathRandom, MersenneTwister, NoRandom, PaulHoule, Random, floor, round;
 
   this.chancejs || (this.chancejs = {});
 
@@ -280,6 +280,31 @@
 
   })();
 
+  /* src/seeds/paul_houle.coffee */;
+
+
+  /* src/seeds/paul_houle.coffee<PaulHoule> line:6 */;
+
+
+  PaulHoule = (function() {
+    /* src/seeds/paul_houle.coffee<PaulHoule::constructor> line:7 */;
+
+    function PaulHoule(seed) {
+      this.seed = seed;
+    }
+
+    /* src/seeds/paul_houle.coffee<PaulHoule::get> line:8 */;
+
+
+    PaulHoule.prototype.get = function() {
+      this.seed = (this.seed * 9301 + 49297) % 233280;
+      return this.seed / 233280.0;
+    };
+
+    return PaulHoule;
+
+  })();
+
   /* src/random.coffee */;
 
 
@@ -519,6 +544,8 @@
   this.chancejs.LaggedFibonnacci = LaggedFibonnacci;
 
   this.chancejs.MersenneTwister = MersenneTwister;
+
+  this.chancejs.PaulHoule = PaulHoule;
 
   this.chancejs.Random = Random;
 

@@ -7,6 +7,7 @@ includes: [
   'src/seeds/linear_congruential'
   'src/seeds/lagged_fibonnacci'
   'src/seeds/mersenne_twister'
+  'src/seeds/paul_houle'
   'src/random'
 ]
 operators: [
