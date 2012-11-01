@@ -1,3 +1,5 @@
+![Build Status](https://travis-ci.org/abe33/chancejs.png)
+
 Various pseudo-random implementations packaged with helpful random utilities.
 
 ## Installation And Usage

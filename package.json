@@ -12,9 +12,14 @@
   "engine": {
     "node": "~0.8.0"
   },
-  "dependencies": {
-    "neat": "0.0.69"
+  "scripts": {
+    "test": "jasmine-node --coffee test"
   },
-  "devDependencies": {},
+  "dependencies": {
+    "neat": "0.0.70"
+  },
+  "devDependencies": {
+    "jasmine-node": "*"
+  },
   "main": "./lib/index"
 }

@@ -5,3 +5,5 @@ description: "Various pseudo-random implementations packaged with helpful random
 keywords: ["random", "neat", "pseudo-random", "mersenne-twister"]
 engine:
   node: "~0.8.0"
+scripts:
+  test: 'jasmine-node --coffee test'
