@@ -1,4 +1,4 @@
-npm 'neat', '0.0.70'
+npm 'neat', '0.0.71'
 
 group 'test', ->
   npm 'jasmine-node'
