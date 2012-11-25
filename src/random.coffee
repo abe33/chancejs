@@ -41,11 +41,12 @@ class Random
       if ratios?
         if ratios.length isnt array.length
           throw new Error 'array and ratios arrays must have the same length'
-        for b,i in ratios
-          if i > 0
-            a = ratios[i-1]
-            if a > b
-              throw new Error 'ratios must be ordered when summed is true'
+        if summed
+          for b,i in ratios
+            if i > 0
+              a = ratios[i-1]
+              if a > b
+                throw new Error 'ratios must be ordered when summed is true'
 
         if summed
           last = ratios[ratios.length-1]

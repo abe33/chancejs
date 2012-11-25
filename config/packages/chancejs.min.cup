@@ -1,4 +1,4 @@
-name: "chancejs_min"
+name: "chancejs.min"
 package: "chancejs"
 includes: [
   'src/seeds/no_random'
