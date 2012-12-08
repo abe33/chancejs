@@ -1,4 +1,5 @@
 src
+config
 node_modules
 spec
 test
@@ -7,3 +8,4 @@ Cakefile
 Nemfile
 .gitkeep
 .gitignore
+.travis.yml
