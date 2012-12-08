@@ -1,6 +1,6 @@
 {
   "name": "chancejs",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "author": "Cédric Néhémie <cedric.nehemie@gmail.com>",
   "description": "Various pseudo-random implementations packaged with helpful random utilities",
   "keywords": [
