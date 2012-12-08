@@ -1,0 +1,64 @@
+
+<html>
+  <meta charset='utf-8'>
+  <title>src/seeds/no_random.coffee</title>
+  <head>
+    <link rel='stylesheet' media='all' href='docco.css'>
+<link href='http://fonts.googleapis.com/css?family=Lato:300' rel='stylesheet' type='text/css'>
+<script src='http://code.jquery.com/jquery-1.6.2.min.js' type='text/javascript' charset='utf-8'></script>
+<script src='docco.js' type='text/javascript' charset='utf-8'></script>
+    <script>
+      $(document).ready(function(){
+        $('#menu').columnview();
+        $('#jump_show').click(function(){
+          $('#jump_to').toggleClass('visible')
+        })
+        var p = "src/seeds/no_random.coffee".split('/')
+        var f = p.pop()
+        for(var i=0;i<p.length;i++){
+          var s = p[i] + "/"
+          $("#jump_page div a span.label").filter(function(){
+            return $(this).text() == s
+          }).parent().click()
+        }
+    
+        $("#jump_page div a span.label").filter(function(){
+          return $(this).text() == f
+        }).last().parent().toggleClass('active')
+      })
+    </script>
+  </head>
+  <body>
+    <div id='container'>
+      <div id='jump_to'><div id='jump_page'>
+  <ul class='menu' id='menu'>
+    <li class='leaf'><a href='#'>src/</a><ul class='menu'><li class='leaf'><a href='src_random.html'>random.coffee</a></li><li class='leaf'><a href='#'>seeds/</a><ul class='menu'><li class='leaf'><a href='src_seeds_lagged_fibonnacci.html'>lagged_fibonnacci.coffee</a></li><li class='leaf'><a href='src_seeds_linear.html'>linear.coffee</a></li><li class='leaf'><a href='src_seeds_linear_congruential.html'>linear_congruential.coffee</a></li><li class='leaf'><a href='src_seeds_math_random.html'>math_random.coffee</a></li><li class='leaf'><a href='src_seeds_mersenne_twister.html'>mersenne_twister.coffee</a></li><li class='leaf'><a href='src_seeds_no_random.html'>no_random.coffee</a></li></ul></li></ul></li>
+  </ul>
+</div>
+<div id='jump_show'>
+  Jump To &hellip;
+</div></div>
+      <table cellpadding='0' cellspacing='0'>
+        <tr>
+          <th class='docs'>
+            <h3>src/seeds/</h3>
+            <h1>no_random.coffee</h1>
+          </th>
+          <th class='code'>
+            <pre></pre>
+          </th>
+        </tr>
+        <tr>
+          <td class='docs'></td>
+          <td class='code'><div class="highlight"><pre><span class="k">class</span> <span class="nb">NoRandom</span>
+  <span class="py">constructor</span><span class="o">:</span> <span class="p">(</span><span class="py">@seed</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span> <span class="o">-&gt;</span>
+  <span class="py">get</span><span class="o">:</span> <span class="o">-&gt;</span> <span class="py">@seed</span>
+
+<span class="nv">module.exports </span><span class="o">=</span> <span class="nb">NoRandom</span>
+
+</pre></div></td>
+        </tr>
+      </table>
+    </div>
+  </body>
+</html>

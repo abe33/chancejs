@@ -16,7 +16,8 @@
     "test": "jasmine-node --coffee test"
   },
   "dependencies": {
-    "neat": "0.0.71"
+    "neat": "0.0.74",
+    "mixinsjs": "0.1.0"
   },
   "devDependencies": {
     "jasmine-node": "*"

@@ -421,12 +421,14 @@
           if (ratios.length !== array.length) {
             throw new Error('array and ratios arrays must have the same length');
           }
-          for (i = _i = 0, _len = ratios.length; _i < _len; i = ++_i) {
-            b = ratios[i];
-            if (i > 0) {
-              a = ratios[i - 1];
-              if (a > b) {
-                throw new Error('ratios must be ordered when summed is true');
+          if (summed) {
+            for (i = _i = 0, _len = ratios.length; _i < _len; i = ++_i) {
+              b = ratios[i];
+              if (i > 0) {
+                a = ratios[i - 1];
+                if (a > b) {
+                  throw new Error('ratios must be ordered when summed is true');
+                }
               }
             }
           }
@@ -464,7 +466,7 @@
       }
     };
 
-    /* src/random.coffee<Random::in> line:65 */;
+    /* src/random.coffee<Random::in> line:66 */;
 
 
     Random.prototype["in"] = function(a, b, c) {
@@ -491,7 +493,7 @@
       }
     };
 
-    /* src/random.coffee<Random::sort> line:78 */;
+    /* src/random.coffee<Random::sort> line:79 */;
 
 
     Random.prototype.sort = function() {
@@ -501,28 +503,28 @@
       };
     };
 
-    /* src/random.coffee<Random::random> line:80 */;
+    /* src/random.coffee<Random::random> line:81 */;
 
 
     Random.prototype.random = function(amount) {
       return this.get() * (amount || 1);
     };
 
-    /* src/random.coffee<Random::intRandom> line:81 */;
+    /* src/random.coffee<Random::intRandom> line:82 */;
 
 
     Random.prototype.intRandom = function(amount) {
       return round(this.random(amount));
     };
 
-    /* src/random.coffee<Random::pad> line:83 */;
+    /* src/random.coffee<Random::pad> line:84 */;
 
 
     Random.prototype.pad = function(amount) {
       return amount / 2 - this.random(amount);
     };
 
-    /* src/random.coffee<Random::intPad> line:84 */;
+    /* src/random.coffee<Random::intPad> line:85 */;
 
 
     Random.prototype.intPad = function(amount) {

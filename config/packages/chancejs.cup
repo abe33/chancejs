@@ -18,4 +18,6 @@ operators: [
   'exports:package'
   'compile'
   'create:file'
+  'uglify'
+  'create:file'
 ]
