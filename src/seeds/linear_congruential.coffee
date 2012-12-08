@@ -1,5 +1,12 @@
+{Cloneable, Sourcable, Formattable, include} = require 'mixinsjs'
 
 class LinearCongruential
+  include([
+    Cloneable('seed')
+    Sourcable('chancejs.LinearCongruential','seed')
+    Formattable('LinearCongruential','seed')
+  ]).in LinearCongruential
+
   constructor: (@seed=1) ->
   plantSeed: (@seed=1) ->
 

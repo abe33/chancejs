@@ -1,5 +1,12 @@
+{Cloneable, Sourcable, Formattable, include} = require 'mixinsjs'
 
 class LaggedFibonnacci
+  include([
+    Cloneable('seed')
+    Sourcable('chancejs.LaggedFibonnacci','seed')
+    Formattable('LaggedFibonnacci','seed')
+  ]).in LaggedFibonnacci
+
   constructor: (seed=0) ->
     @plantSeed seed
 

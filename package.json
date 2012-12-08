@@ -17,7 +17,7 @@
   },
   "dependencies": {
     "neat": "0.0.74",
-    "mixinsjs": "0.1.0"
+    "mixinsjs": "0.1.1"
   },
   "devDependencies": {
     "jasmine-node": "*"

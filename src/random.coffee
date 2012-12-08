@@ -1,7 +1,14 @@
 
+{Cloneable, Sourcable, Formattable, include} = require 'mixinsjs'
 {floor, round} = Math
 
 class Random
+  include([
+    Cloneable('generator')
+    Sourcable('chancejs.Random','generator')
+    Formattable('Random','generator')
+  ]).in Random
+
   constructor: (@generator) ->
 
   get: -> @generator.get()

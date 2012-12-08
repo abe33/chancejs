@@ -1,5 +1,12 @@
+{Cloneable, Sourcable, Formattable, include} = require 'mixinsjs'
 
 class Linear
+  include([
+    Cloneable('step')
+    Sourcable('chancejs.Linear','step')
+    Formattable('Linear','step')
+  ]).in Linear
+
   constructor: (@step=1000000000) ->
     @iterator = 0
 

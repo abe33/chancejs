@@ -1,4 +1,12 @@
+{Cloneable, Sourcable, Formattable, include} = require 'mixinsjs'
+
 class MersenneTwister
+  include([
+    Cloneable('seed')
+    Sourcable('chancejs.MersenneTwister','seed')
+    Formattable('MersenneTwister','seed')
+  ]).in MersenneTwister
+
   constructor: (seed=0) ->
     @mt = Array 623
     @z = 0
