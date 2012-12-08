@@ -1,5 +1,6 @@
+mixinsjs = require 'mixinsjs'
 
-{Cloneable, Sourcable, Formattable, include} = require 'mixinsjs'
+{Cloneable, Sourcable, Formattable, include} = mixinsjs
 {floor, round} = Math
 
 class Random

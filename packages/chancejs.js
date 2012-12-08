@@ -1,26 +1,28 @@
 (function() {
-  var LaggedFibonnacci, Linear, LinearCongruential, MathRandom, MersenneTwister, NoRandom, PaulHoule, Random, floor, round;
+  var Cloneable, Formattable, LaggedFibonnacci, Linear, LinearCongruential, MathRandom, MersenneTwister, NoRandom, PaulHoule, Random, Sourcable, floor, include, round;
 
   this.chancejs || (this.chancejs = {});
 
   /* src/seeds/no_random.coffee */;
 
 
-  /* src/seeds/no_random.coffee<NoRandom> line:1 */;
+  Cloneable = mixinsjs.Cloneable, Sourcable = mixinsjs.Sourcable, Formattable = mixinsjs.Formattable, include = mixinsjs.include;
+
+  /* src/seeds/no_random.coffee<NoRandom> line:4 */;
 
 
   NoRandom = (function() {
 
     include([Cloneable('seed'), Sourcable('chancejs.NoRandom', 'seed'), Formattable('NoRandom', 'seed')])["in"](NoRandom);
 
-    /* src/seeds/no_random.coffee<NoRandom::constructor> line:8 */;
+    /* src/seeds/no_random.coffee<NoRandom::constructor> line:11 */;
 
 
     function NoRandom(seed) {
       this.seed = seed != null ? seed : 0;
     }
 
-    /* src/seeds/no_random.coffee<NoRandom::get> line:9 */;
+    /* src/seeds/no_random.coffee<NoRandom::get> line:12 */;
 
 
     NoRandom.prototype.get = function() {
@@ -34,7 +36,9 @@
   /* src/seeds/math_random.coffee */;
 
 
-  /* src/seeds/math_random.coffee<MathRandom> line:2 */;
+  Cloneable = mixinsjs.Cloneable, Sourcable = mixinsjs.Sourcable, Formattable = mixinsjs.Formattable, include = mixinsjs.include;
+
+  /* src/seeds/math_random.coffee<MathRandom> line:4 */;
 
 
   MathRandom = (function() {
@@ -43,7 +47,7 @@
 
     include([Cloneable(), Sourcable('chancejs.MathRandom'), Formattable('MathRandom')])["in"](MathRandom);
 
-    /* src/seeds/math_random.coffee<MathRandom::get> line:9 */;
+    /* src/seeds/math_random.coffee<MathRandom::get> line:11 */;
 
 
     MathRandom.prototype.get = function() {
@@ -57,14 +61,16 @@
   /* src/seeds/linear.coffee */;
 
 
-  /* src/seeds/linear.coffee<Linear> line:2 */;
+  Cloneable = mixinsjs.Cloneable, Sourcable = mixinsjs.Sourcable, Formattable = mixinsjs.Formattable, include = mixinsjs.include;
+
+  /* src/seeds/linear.coffee<Linear> line:4 */;
 
 
   Linear = (function() {
 
     include([Cloneable('step'), Sourcable('chancejs.Linear', 'step'), Formattable('Linear', 'step')])["in"](Linear);
 
-    /* src/seeds/linear.coffee<Linear::constructor> line:9 */;
+    /* src/seeds/linear.coffee<Linear::constructor> line:11 */;
 
 
     function Linear(step) {
@@ -72,7 +78,7 @@
       this.iterator = 0;
     }
 
-    /* src/seeds/linear.coffee<Linear::get> line:12 */;
+    /* src/seeds/linear.coffee<Linear::get> line:14 */;
 
 
     Linear.prototype.get = function() {
@@ -91,28 +97,30 @@
   /* src/seeds/linear_congruential.coffee */;
 
 
-  /* src/seeds/linear_congruential.coffee<LinearCongruential> line:2 */;
+  Cloneable = mixinsjs.Cloneable, Sourcable = mixinsjs.Sourcable, Formattable = mixinsjs.Formattable, include = mixinsjs.include;
+
+  /* src/seeds/linear_congruential.coffee<LinearCongruential> line:4 */;
 
 
   LinearCongruential = (function() {
 
     include([Cloneable('seed'), Sourcable('chancejs.LinearCongruential', 'seed'), Formattable('LinearCongruential', 'seed')])["in"](LinearCongruential);
 
-    /* src/seeds/linear_congruential.coffee<LinearCongruential::constructor> line:9 */;
+    /* src/seeds/linear_congruential.coffee<LinearCongruential::constructor> line:11 */;
 
 
     function LinearCongruential(seed) {
       this.seed = seed != null ? seed : 1;
     }
 
-    /* src/seeds/linear_congruential.coffee<LinearCongruential::plantSeed> line:10 */;
+    /* src/seeds/linear_congruential.coffee<LinearCongruential::plantSeed> line:12 */;
 
 
     LinearCongruential.prototype.plantSeed = function(seed) {
       this.seed = seed != null ? seed : 1;
     };
 
-    /* src/seeds/linear_congruential.coffee<LinearCongruential::get> line:12 */;
+    /* src/seeds/linear_congruential.coffee<LinearCongruential::get> line:14 */;
 
 
     LinearCongruential.prototype.get = function() {
@@ -137,14 +145,16 @@
   /* src/seeds/lagged_fibonnacci.coffee */;
 
 
-  /* src/seeds/lagged_fibonnacci.coffee<LaggedFibonnacci> line:2 */;
+  Cloneable = mixinsjs.Cloneable, Sourcable = mixinsjs.Sourcable, Formattable = mixinsjs.Formattable, include = mixinsjs.include;
+
+  /* src/seeds/lagged_fibonnacci.coffee<LaggedFibonnacci> line:4 */;
 
 
   LaggedFibonnacci = (function() {
 
     include([Cloneable('seed'), Sourcable('chancejs.LaggedFibonnacci', 'seed'), Formattable('LaggedFibonnacci', 'seed')])["in"](LaggedFibonnacci);
 
-    /* src/seeds/lagged_fibonnacci.coffee<LaggedFibonnacci::constructor> line:9 */;
+    /* src/seeds/lagged_fibonnacci.coffee<LaggedFibonnacci::constructor> line:11 */;
 
 
     function LaggedFibonnacci(seed) {
@@ -154,7 +164,7 @@
       this.plantSeed(seed);
     }
 
-    /* src/seeds/lagged_fibonnacci.coffee<LaggedFibonnacci::get> line:12 */;
+    /* src/seeds/lagged_fibonnacci.coffee<LaggedFibonnacci::get> line:14 */;
 
 
     LaggedFibonnacci.prototype.get = function() {
@@ -181,7 +191,7 @@
       return uni;
     };
 
-    /* src/seeds/lagged_fibonnacci.coffee<LaggedFibonnacci::plantSeed> line:26 */;
+    /* src/seeds/lagged_fibonnacci.coffee<LaggedFibonnacci::plantSeed> line:28 */;
 
 
     LaggedFibonnacci.prototype.plantSeed = function(seed) {
@@ -223,14 +233,16 @@
   /* src/seeds/mersenne_twister.coffee */;
 
 
-  /* src/seeds/mersenne_twister.coffee<MersenneTwister> line:2 */;
+  Cloneable = mixinsjs.Cloneable, Sourcable = mixinsjs.Sourcable, Formattable = mixinsjs.Formattable, include = mixinsjs.include;
+
+  /* src/seeds/mersenne_twister.coffee<MersenneTwister> line:4 */;
 
 
   MersenneTwister = (function() {
 
     include([Cloneable('seed'), Sourcable('chancejs.MersenneTwister', 'seed'), Formattable('MersenneTwister', 'seed')])["in"](MersenneTwister);
 
-    /* src/seeds/mersenne_twister.coffee<MersenneTwister::constructor> line:9 */;
+    /* src/seeds/mersenne_twister.coffee<MersenneTwister::constructor> line:11 */;
 
 
     function MersenneTwister(seed) {
@@ -243,7 +255,7 @@
       this.plantSeed(seed);
     }
 
-    /* src/seeds/mersenne_twister.coffee<MersenneTwister::plantSeed> line:16 */;
+    /* src/seeds/mersenne_twister.coffee<MersenneTwister::plantSeed> line:18 */;
 
 
     MersenneTwister.prototype.plantSeed = function(seed) {
@@ -259,7 +271,7 @@
       return _results;
     };
 
-    /* src/seeds/mersenne_twister.coffee<MersenneTwister::get> line:20 */;
+    /* src/seeds/mersenne_twister.coffee<MersenneTwister::get> line:22 */;
 
 
     MersenneTwister.prototype.get = function() {
@@ -269,7 +281,7 @@
       return this.extractNumber(this.z++) / 0x80000000;
     };
 
-    /* src/seeds/mersenne_twister.coffee<MersenneTwister::generateNumbers> line:24 */;
+    /* src/seeds/mersenne_twister.coffee<MersenneTwister::generateNumbers> line:26 */;
 
 
     MersenneTwister.prototype.generateNumbers = function() {
@@ -287,7 +299,7 @@
       return _results;
     };
 
-    /* src/seeds/mersenne_twister.coffee<MersenneTwister::extractNumber> line:34 */;
+    /* src/seeds/mersenne_twister.coffee<MersenneTwister::extractNumber> line:36 */;
 
 
     MersenneTwister.prototype.extractNumber = function(i) {
@@ -305,21 +317,23 @@
   /* src/seeds/paul_houle.coffee */;
 
 
-  /* src/seeds/paul_houle.coffee<PaulHoule> line:7 */;
+  Cloneable = mixinsjs.Cloneable, Sourcable = mixinsjs.Sourcable, Formattable = mixinsjs.Formattable, include = mixinsjs.include;
+
+  /* src/seeds/paul_houle.coffee<PaulHoule> line:8 */;
 
 
   PaulHoule = (function() {
 
     include([Cloneable('seed'), Sourcable('chancejs.PaulHoule', 'seed'), Formattable('PaulHoule', 'seed')])["in"](PaulHoule);
 
-    /* src/seeds/paul_houle.coffee<PaulHoule::constructor> line:14 */;
+    /* src/seeds/paul_houle.coffee<PaulHoule::constructor> line:15 */;
 
 
     function PaulHoule(seed) {
       this.seed = seed;
     }
 
-    /* src/seeds/paul_houle.coffee<PaulHoule::get> line:15 */;
+    /* src/seeds/paul_houle.coffee<PaulHoule::get> line:16 */;
 
 
     PaulHoule.prototype.get = function() {
@@ -334,30 +348,32 @@
   /* src/random.coffee */;
 
 
+  Cloneable = mixinsjs.Cloneable, Sourcable = mixinsjs.Sourcable, Formattable = mixinsjs.Formattable, include = mixinsjs.include;
+
   floor = Math.floor, round = Math.round;
 
-  /* src/random.coffee<Random> line:4 */;
+  /* src/random.coffee<Random> line:5 */;
 
 
   Random = (function() {
 
     include([Cloneable('generator'), Sourcable('chancejs.Random', 'generator'), Formattable('Random', 'generator')])["in"](Random);
 
-    /* src/random.coffee<Random::constructor> line:11 */;
+    /* src/random.coffee<Random::constructor> line:12 */;
 
 
     function Random(generator) {
       this.generator = generator;
     }
 
-    /* src/random.coffee<Random::get> line:13 */;
+    /* src/random.coffee<Random::get> line:14 */;
 
 
     Random.prototype.get = function() {
       return this.generator.get();
     };
 
-    /* src/random.coffee<Random::boolean> line:15 */;
+    /* src/random.coffee<Random::boolean> line:16 */;
 
 
     Random.prototype.boolean = function(rate) {
@@ -370,7 +386,7 @@
       return this.get() < rate;
     };
 
-    /* src/random.coffee<Random::bit> line:16 */;
+    /* src/random.coffee<Random::bit> line:17 */;
 
 
     Random.prototype.bit = function(rate) {
@@ -384,7 +400,7 @@
       }
     };
 
-    /* src/random.coffee<Random::sign> line:17 */;
+    /* src/random.coffee<Random::sign> line:18 */;
 
 
     Random.prototype.sign = function(rate) {
@@ -398,7 +414,7 @@
       }
     };
 
-    /* src/random.coffee<Random::char> line:19 */;
+    /* src/random.coffee<Random::char> line:20 */;
 
 
     Random.prototype.char = function(arg, rangeEnd) {
@@ -425,7 +441,7 @@
       }
     };
 
-    /* src/random.coffee<Random::inRange> line:36 */;
+    /* src/random.coffee<Random::inRange> line:37 */;
 
 
     Random.prototype.inRange = function(a, b, c) {
@@ -441,7 +457,7 @@
       return res;
     };
 
-    /* src/random.coffee<Random::inArray> line:45 */;
+    /* src/random.coffee<Random::inArray> line:46 */;
 
 
     Random.prototype.inArray = function(array, ratios, summed) {
@@ -496,7 +512,7 @@
       }
     };
 
-    /* src/random.coffee<Random::in> line:72 */;
+    /* src/random.coffee<Random::in> line:73 */;
 
 
     Random.prototype["in"] = function(a, b, c) {
@@ -523,7 +539,7 @@
       }
     };
 
-    /* src/random.coffee<Random::sort> line:85 */;
+    /* src/random.coffee<Random::sort> line:86 */;
 
 
     Random.prototype.sort = function() {
@@ -533,28 +549,28 @@
       };
     };
 
-    /* src/random.coffee<Random::random> line:87 */;
+    /* src/random.coffee<Random::random> line:88 */;
 
 
     Random.prototype.random = function(amount) {
       return this.get() * (amount || 1);
     };
 
-    /* src/random.coffee<Random::intRandom> line:88 */;
+    /* src/random.coffee<Random::intRandom> line:89 */;
 
 
     Random.prototype.intRandom = function(amount) {
       return round(this.random(amount));
     };
 
-    /* src/random.coffee<Random::pad> line:90 */;
+    /* src/random.coffee<Random::pad> line:91 */;
 
 
     Random.prototype.pad = function(amount) {
       return amount / 2 - this.random(amount);
     };
 
-    /* src/random.coffee<Random::intPad> line:91 */;
+    /* src/random.coffee<Random::intPad> line:92 */;
 
 
     Random.prototype.intPad = function(amount) {

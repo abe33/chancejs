@@ -2,8 +2,9 @@
 #
 # The Central Randomizer 1.3 (C) 1997 by Paul Houle (paul@honeylocust.com)
 # See:  http://www.honeylocust.com/javascript/randomizer.html
+mixinsjs = require 'mixinsjs'
 
-{Cloneable, Sourcable, Formattable, include} = require 'mixinsjs'
+{Cloneable, Sourcable, Formattable, include} = mixinsjs
 
 class PaulHoule
   include([

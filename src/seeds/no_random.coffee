@@ -1,4 +1,7 @@
-{Cloneable, Sourcable, Formattable, include} = require 'mixinsjs'
+mixinsjs = require 'mixinsjs'
+
+{Cloneable, Sourcable, Formattable, include} = mixinsjs
+
 class NoRandom
   include([
     Cloneable('seed')
